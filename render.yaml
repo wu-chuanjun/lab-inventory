@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lab-inventory
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: REGISTER_CODE
+        value: lab2026
+      - key: NODE_VERSION
+        value: 22.11.0
